@@ -1,0 +1,125 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../imagenes/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+/* TITULO */
+
+h1 {
+    text-align: center;
+    margin: 40px 0 30px;
+    color: #FFD90F;
+    font-size: 36px;
+    text-shadow: 2px 3px 5px black;
+}
+
+/* BUSCADOR */
+
+.Buscador {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 35px;
+    padding: 0 15px;
+}
+
+.Buscador input {
+    width: 320px;
+    padding: 13px;
+    border: 2px solid #FFD90F;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+.Buscador input:focus {
+    border-color: #ff9800;
+}
+
+.Buscador button {
+    padding: 13px 25px;
+    background: #FFD90F;
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.Buscador button:hover {
+    background: #ffb800;
+}
+
+/* TARJETA */
+
+.TarjetaPersonaje {
+    width: 380px;
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 25px;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.TarjetaPersonaje:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    border-color: #FFD90F;
+}
+
+.TarjetaPersonaje h2 {
+    margin-bottom: 20px;
+    color: #FFD90F;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* IMAGEN */
+
+.ImagenPersonaje {
+    width: 220px;
+    height: 230px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.4));
+    transition: transform 0.3s ease;
+}
+
+.TarjetaPersonaje:hover .ImagenPersonaje {
+    transform: scale(1.07);
+}
+
+/* INFORMACION */
+
+.TarjetaPersonaje p {
+    margin: 10px 0;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    color: #f1f5f9;
+    text-align: left;
+    font-size: 15px;
+}
+
