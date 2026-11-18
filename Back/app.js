@@ -7,25 +7,33 @@ app.use(cors())
 
 app.get('/personaje/:id', async (req, res) => {
 
-    const response = await fetch(
-        'https://thesimpsonsapi.com/api/characters'
-    )
+    try {
 
-    const data = await response.json()
-
-    const personaje = data.results.find((p) => {
-
-        return (
-            String(p.id) === req.params.id ||
-            p.name.toLowerCase() === req.params.id.toLowerCase()
+        const response = await fetch(
+            'https://thesimpsonsapi.com/api/characters'
         )
 
-    })
+        const data = await response.json()
 
-    console.log(personaje)
+        const personaje = data.results.find((p) => {
 
-    res.json(personaje || null)
+            return (
+                String(p.id) === req.params.id ||
+                p.name.toLowerCase() === req.params.id.toLowerCase()
+            )
+
+        })
+
+        console.log(personaje)
+
+        res.json(personaje || null)
+
+    } catch (error) {
+
+        res.status(500).json({ error: 'Error al consultar los personajes' })
+
+    }
 
 })
 
-app.listen(3000, () => console.log("CORRIENDO"))
+app.listen(process.env.PORT || 3000, () => console.log("CORRIENDO"))
